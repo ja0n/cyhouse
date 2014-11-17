@@ -7,6 +7,13 @@ A arquitetura inicial do projeto é simples, desenvolvida para ser amplamente es
 
 --------------------
 
+Prerequisite
+===
+
+* [MongoDB](http://www.mongodb.org/)
+
+--------------------
+
 Install
 ===
 
