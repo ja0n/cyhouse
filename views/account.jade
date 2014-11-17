@@ -1,0 +1,12 @@
+extends layout
+
+block content
+  script(src='javascripts/functions.js')
+  h1 Bem-vindo #{user}
+  p whats up #{user}
+  input(type='button' onclick="opcode('digitalWrite', 13, 'HIGH')" value='turn led ON')
+  br
+  input(type='button' onclick="opcode('digitalWrite', 13, 'LOW')" value='turn led OFF')
+  br
+  br
+  a(href='logout') Logout

@@ -1,0 +1,59 @@
+.form {
+  width: 20%;
+  display: block !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+
+}
+
+.form h2, p {
+  text-align: center;
+}
+
+.form .list-inset {
+  margin-bottom: 15px;
+}
+.form input {
+  color: #7c7c7c !important;
+  padding: 0px !important;
+  text-align: center;
+
+}
+
+.form input:focus {
+  background: #4A87EE !important;
+  color: #fff !important;
+
+}
+
+.form input:focus::-webkit-input-placeholder {
+  color: #fff;
+}
+
+.form input:focus::-moz-placeholder {
+  color: #fff;
+}
+
+.form input:focus:-ms-input-placeholder {
+  color: #fff;
+}
+
+.form label {
+  width: 60%;
+  display: block !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  padding: 0px;
+
+}
+
+.logo {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 25px;
+
+}
+
+.parent > div {height: 100%;}
+.dragme {display:block;width: 384px;height: 378px; position:absolute; background: red;}

@@ -1,0 +1,70 @@
+doctype html
+html(ng-app='App')
+  head
+    meta(charset='utf8')
+    title CyHouse
+    meta(name='viewport' content='initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width')
+    link(rel='stylesheet' href='/lib/ionic/css/ionic.min.css')
+    link(rel='stylesheet' href='/css/custom.css')
+    script(src='/lib/ionic/js/ionic.bundle.min.js')
+    script(src='/lib/jquery/jquery-1.11.1.min.js')
+    script(src='/lib/fabricjs/fabric.min.js')
+    script(src='/js/app.js')
+
+  body
+    ion-nav-view(animation='slide-left-right')
+    
+    script(type='text/ng-template' id='login.html')
+      ion-nav-bar(class='bar-positive nav-title-slide-ios7')
+      ion-view(title="Login CyHouse")
+        ion-content(scroll='false')
+          div(class='list card form')
+            div(class='item')
+              h2 Login
+              p Insira seus dados, por favor.
+            div(class='item item-body')
+              div(class='list list-inset')
+                label(class='item item-input')
+                  input(type='text' ng-model='user.username' placeholder='Username')
+                label(class='item item-input')
+                  input(type='password' ng-model='user.password' placeholder='Password')
+            div(class='item tabs tabs-secondary tabs-icon-left')
+              a(class='tab-item' ng-click='signIn(user)')
+                i(class='icon ion-key') 
+                | Logar
+                
+    script(type='text/ng-template' id='forgot-password.html')
+      ion-view(title="Esqueci minha senha")
+        ion-content(scroll='false' padding='true')
+          p duhh
+          
+    script(type='text/ng-template' id='menu.html')
+      ion-side-menus
+        ion-side-menu(side='left')
+          div(class='bar bar-header bar-positive')
+            h1(class='title') Menu
+          ion-content(scroll='true' class='has-header')
+            ion-list
+              ion-item(nav-clear menu-close href='#/app/welcome')
+                | Welcome1
+              ion-item(nav-clear menu-close href='#/app/logic')
+                | Lógica
+              ion-item(nav-clear href='logout')
+                | Sair
+        ion-side-menu-content(drag-content='false' scroll='false')
+          ion-nav-bar(class='bar-positive nav-title-slide-ios7')
+          ion-nav-buttons(side='left')
+            button(menu-toggle='left' class='button button-icon icon ion-navicon')
+          ion-nav-view
+          
+            
+    script(type='text/ng-template' id='welcome.html')
+      ion-view(title="EEE")
+        ion-content(scroll='false')
+          h1 Bem vindoooooo!
+          div(draggable class="dragme")
+          
+    script(type='text/ng-template' id='logic.html')
+      ion-view(title="Lógica")
+        ion-content(scroll='false')
+          canvas(id='c' width='480' height='360' style='border: 1px solid black')

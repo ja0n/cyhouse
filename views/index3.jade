@@ -1,0 +1,24 @@
+doctype html
+html(ng-app='App')
+  head
+    meta(charset='utf8')
+    title CyHouss
+    meta(name='viewport' content='initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width')
+    link(rel='stylesheet' href='/lib/ionic/css/ionic.min.css')
+    script(scr='/lib/ionic/js/ionic.bundle.min.js')
+    script(src='/lib/jquery/jquery-1.11.1.min.js')
+    script(src='/js/app.js')
+
+  body
+    ion-nav-bar
+    ion-nav-view
+    
+    script(type="text/ng-template" id="test.html")
+      ion-view(title="Test")
+        ion-content(scroll='false')
+          form(action='/login' method='post')
+            input(type='text' name='username' placeholder='Username' required autofocus)
+            br
+            input(type='password' name='password' placeholder='Password' required)
+            br
+            input(type='submit' value='Submit')
