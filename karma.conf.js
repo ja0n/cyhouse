@@ -15,7 +15,7 @@ module.exports = function (config) {
 
         port: 9876,
         colors: true,
-        autoWatch: false,
+        autoWatch: true,
         singleRun: false,
 
         // level of logging

@@ -1,11 +1,10 @@
-class Module extends Base {
-    constructor(id)
-    {
-        super(id);
-    }
+"use strict"
 
-    getActions()
-    {
-        print('hey');
+var Module = {
+    getActions: function() {
+        console.log('oi');
     }
-}
+};
+
+
+module.exports = Module;
