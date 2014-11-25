@@ -55,25 +55,25 @@ html(ng-app='App')
             h1(class='title') Menu
           ion-content(scroll='true' class='has-header')
             ion-list
-              ion-item(class='item-icon-left' nav-clear menu-close href='#/app/welcome')
+              //ion-item(class='item-icon-left' nav-clear menu-close href='#/app/welcome')
                 i(class='icon ion-email')
                 | Welcome1
-              ion-item(class='item-icon-left' nav-clear menu-close href='#/app/logic')
+              //ion-item(class='item-icon-left' nav-clear menu-close href='#/app/logic')
                 i(class='icon ion-home')
                 | Minha casa
               ion-item(class='item-icon-left' nav-clear menu-close href='#/app/statistics')
                 i(class='icon ion-stats-bars')
                 | Estatísticas
-              ion-item(class='item-icon-left' nav-clear menu-close href='#/app/statistics')
+              //ion-item(class='item-icon-left' nav-clear menu-close href='#/app/statistics')
                 i(class='icon ion-stats-bars')
                 | Agenda(todo list)
               ion-item(class='item-icon-left' nav-clear menu-close href='#/app/logic')
                 i(class='icon ion-lightbulb')
                 | Lógica
-              ion-item(class='item-icon-left' nav-clear menu-close href='#/app/logic')
+              //ion-item(class='item-icon-left' nav-clear menu-close href='#/app/logic')
                 i(class='icon ion-levels')
                 | Módulos
-              ion-item(class='item-icon-left' nav-clear menu-close href='#/app/logic')
+              //ion-item(class='item-icon-left' nav-clear menu-close href='#/app/logic')
                 i(class='icon ion-gear-b')
                 | Configurações
               ion-item(class='item-icon-left' nav-clear href='logout')
@@ -90,6 +90,9 @@ html(ng-app='App')
     script(type='text/ng-template' id='statistics.html')
       ion-view(title="Estatísticas")
         ion-content(scroll='false')
+          div(class='item item-text-wrap' style='width: 480px; margin: 10px')
+            |Quantas horas a lâmpada ficou ligada por mês
+          br
           canvas(id='container' width='480' height='300' style='border: 1px solid black; margin: 10px')
     script(type='text/ng-template' id='logic.html')
       ion-view(title="Lógica")
@@ -97,7 +100,7 @@ html(ng-app='App')
           div(id='output')
           div(id='container' style='width: 650px; height: 400px; border: 1px solid black')
           div(class='range range-positive' style='width: 300px')
-            i(class='icon ion-ios7-search')
-            input(type='range' min='1' max='100' value='50')
-            i(class='icon ion-search')
+            //i(class='icon ion-ios7-search')
+            //input(type='range' min='1' max='100' value='50')
+            //i(class='icon ion-search')
             
