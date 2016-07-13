@@ -1,0 +1,66 @@
+
+////
+// SIDEBAR
+////
+.db-sidebar
+  background: #34495e
+  position: fixed
+  left: 0
+  top: 0
+  width: $sidebar-width
+  height: 100%
+
+.db-avatar
+  display: flex
+  background: $green
+  padding: 20px 15px
+  color: #fff
+  font-size: 1.3rem
+  font-weight: bold
+  justify-content: space-between
+
+  img
+    margin-right: 5px
+    max-width: 50px
+    max-height: 50px
+    border-radius: 50%
+    border: 3px solid #1BA054
+
+  span 
+    flex-grow: 1
+    text-align: center
+    display: inline-block
+    margin: auto
+
+.db-brand
+  background: $green
+  display: block
+  padding: 20px 15px
+  color: #fff
+  font-size: 1.5rem
+  text-align: center
+
+.db-menu
+  padding-top: 15px
+  
+  a
+    color: #95a5a6
+    text-decoration: none
+    text-transform: uppercase
+    font-size: .88rem
+    padding: 15px 0
+    display: block
+
+    &:before
+      content: ""
+      background: url(../images/db-icons-menu.png)
+      display: inline-block
+      width: 25px
+      height: 25px
+      vertical-align: middle
+      margin: 0 25px
+
+    &:hover,
+    &:active
+      background-color: #243342
+      color: #fff

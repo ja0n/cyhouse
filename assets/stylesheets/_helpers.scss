@@ -1,0 +1,89 @@
+////
+// Colors default
+////
+$colors: (
+	green: #2ecc71,
+	darkgreen: #16a085,
+	lightgray: #dee1e2,
+	orange: #e67333,
+	purple: #8e44ad,
+	red: #E73A27,
+);
+
+$green: map-get($colors, green);
+$darkgreen: map-get($colors, darkgreen);
+$lightgray: map-get($colors, lightgray);
+$orange: map-get($colors, orange);
+$purple: map-get($colors, purple);
+$red: map-get($colors, red);
+
+////
+// Measurements
+////
+$sidebar-width: 200px;
+
+////
+// Helpers Placeholders
+////
+%db-img-replacement {
+	text-indent: -999px;
+	overflow: hidden;
+}
+
+////
+// Functions and Conditionals
+////
+
+/// Colors in Boxes
+@each $color-name, $color in $colors {
+	.db-box-#{$color-name} {
+		.db-box a:hover {
+			box-shadow: inset 5px 0 0 0 $color;
+		}
+
+		.db-active a {
+			color: $color;
+		}
+	}
+}
+
+
+/// Stripes Icons menu sidebar
+$icons-menu: (
+	dashboard: (
+		normal: 0,
+		hover: -27px,
+	), 
+	course: (
+		normal: -66px,
+		hover: -93px,
+	), 
+	exam: (
+		normal: -133px,
+		hover: -160px,
+	), 
+	qa: (
+		normal: -199px,
+		hover: -226px,
+	), 
+	news: (
+		normal: -264px,
+		hover: -291px,
+	), 
+);
+
+@each $icon, $coord in $icons-menu {
+	$normal: map-get($coord, normal);
+	$hover: map-get($coord, hover);
+
+	.db-menu a.db-ico-#{$icon} {
+		&:before {
+			background-position: 0 $normal
+		}
+
+		&:hover:before {
+			background-position: 0 $hover
+		}
+	}
+
+}
