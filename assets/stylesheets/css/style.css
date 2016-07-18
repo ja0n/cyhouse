@@ -182,11 +182,9 @@ img {
 .db-container {
   margin-left: 200px; }
 
-.content {
-  margin-top: 80px; }
-
 .db-content {
-  padding: 40px 45px; }
+  padding: 40px 45px;
+    padding-margin-top: 200px; }
   .db-content .db-box-tabs {
     display: inline-block;
     margin-left: 2%;
@@ -288,8 +286,7 @@ img {
   height: 80px;
   width: calc(100% - 200px);
   padding: 25px;
-  border-bottom: 1px solid #e5e5e5;
-  z-index: 5; }
+  border-bottom: 1px solid #e5e5e5; }
   .db-header .db-logo {
     text-align: center;
     height: 44px; }
@@ -556,11 +553,9 @@ img {
 .db-container {
   margin-left: 200px; }
 
-.content {
-  margin-top: 80px; }
-
 .db-content {
-  padding: 40px 45px; }
+  padding: 40px 45px;
+    padding-margin-top: 200px; }
   .db-content .db-box-tabs {
     display: inline-block;
     margin-left: 2%;

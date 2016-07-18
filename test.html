@@ -1,7 +1,7 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
-	<title>Dashboard HTML + SASS</title>
+	<title>CyHouse</title>
 
 	<link rel="stylesheet" type="text/css" href="assets/stylesheets/style.css">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/1.0.2/Chart.js"></script>
@@ -21,11 +21,14 @@
     <nav class="db-menu">
       <ul>
         <li ui-sref-active="active">
-          <a ui-sref="dashboard" class="db-ico-dashboard">Dashboard</a></li>
-        <li><a href="#" class="db-ico-course">course</a></li>
-        <li><a href="#" class="db-ico-exam">exam</a></li>
-        <li><a href="#" class="db-ico-qa">q&a</a></li>
-        <li><a href="#" class="db-ico-news">news</a></li>
+          <a ui-sref="dashboard" class="db-ico-dashboard">Dashboard</a>
+        </li>
+        <li ui-sref-active="active">
+          <a ui-sref="settings" class="db-ico-exam">Settings</a>
+        </li>
+        <!-- <li><a href="#" class="db-ico-course">course</a></li> -->
+        <!-- <li><a href="#" class="db-ico-qa">q&a</a></li> -->
+        <!-- <li><a href="#" class="db-ico-news">news</a></li> -->
       </ul>
     </nav>
   </aside>
@@ -43,7 +46,7 @@
 
     </header>
 
-    <div ui-view>
+    <div class="content" ui-view>
     </div>
   </section>
 

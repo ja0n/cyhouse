@@ -1,135 +1,138 @@
 @import "helpers"
 
 *
-	margin: 0
-	padding: 0
-	box-sizing: border-box
+  margin: 0
+  padding: 0
+  box-sizing: border-box
 
 body
-	background: #ecf0f1
-	font: 100% helveticaneue, helvetica, arial, sans-serif
+  background: #ecf0f1
+  font: 100% helveticaneue, helvetica, arial, sans-serif
 
 img
-	vertical-align: middle
+  vertical-align: middle
 
 ////
 // CONTAINER
 ////
 .db-container
-	margin-left: $sidebar-width
+  margin-left: $sidebar-width
 
 
 ////
 // Content
 ////
+.content
+  margin-top: 80px
+
 .db-content
-	padding: 40px 45px
+  padding: 40px 45px
 
-	.db-box-tabs
-		display: inline-block
-		margin-left: 2%
-		vertical-align: top
-		width: 31.7%
+  .db-box-tabs
+    display: inline-block
+    margin-left: 2%
+    vertical-align: top
+    width: 31.7%
 
-		&:first-child
-			margin-left: 0
+    &:first-child
+      margin-left: 0
 
 .db-box-tab
-	color: #95a5a6
+  color: #95a5a6
 
-	li
-		text-align: center
-		list-style: none
-		display: inline-block
-		width: 48%
-		font-size: .75rem
-		margin-bottom: -1px
+  li
+    text-align: center
+    list-style: none
+    display: inline-block
+    width: 48%
+    font-size: .75rem
+    margin-bottom: -1px
 
-		&.db-active
-			background: #fff
-			border: 1px solid $lightgray
-			border-bottom: none
-			padding: 20px 0
+    &.db-active
+      background: #fff
+      border: 1px solid $lightgray
+      border-bottom: none
+      padding: 20px 0
 
-	a
-		color: #95a5a6
-		text-decoration: none
-		text-transform: uppercase
+  a
+    color: #95a5a6
+    text-decoration: none
+    text-transform: uppercase
 
-	strong
-		font-size: 2.13rem
-		display: block
-		text-align: center
+  strong
+    font-size: 2.13rem
+    display: block
+    text-align: center
 
 .db-box
-	background: #fff
-	border: 1px solid $lightgray
-	margin-bottom: 35px
+  background: #fff
+  border: 1px solid $lightgray
+  margin-bottom: 35px
 
-	li
-		border-bottom: 1px solid $lightgray
-		list-style: none
+  li
+    border-bottom: 1px solid $lightgray
+    list-style: none
 
-		a
-			line-height: 1
-			padding: 20px 20px 15px
-			display: block
-			text-decoration: none
-			color: #7f8c8d
+    a
+      line-height: 1
+      padding: 20px 20px 15px
+      display: block
+      text-decoration: none
+      color: #7f8c8d
 
-		&:hover
-			background: #f6f8fc
+    &:hover
+      background: #f6f8fc
 
 .db-lnk-show
-	display: block
-	text-align: right
-	color: #2c3e50
-	text-decoration: none
-	font-size: .75rem
-	padding: 10px 20px
+  display: block
+  text-align: right
+  color: #2c3e50
+  text-decoration: none
+  font-size: .75rem
+  padding: 10px 20px
 
-	&:after
-		content: ""
-		background: url(../images/db-ico-arrow-down.png) no-repeat 95% center
-		width: 10px
-		height: 10px
-		display: inline-block
+  &:after
+    content: ""
+    background: url(../images/db-ico-arrow-down.png) no-repeat 95% center
+    width: 10px
+    height: 10px
+    display: inline-block
 
 .db-graph
-	padding: 20px 25px
-	float: left
+  padding: 20px 25px
+  float: left
 
-	hr
-		border: none
-		background: none
-		height: 1px
-		display: block
-		margin: 15px 0
-		width: 100%
-		border-top: 1px solid $lightgray
+  hr
+    border: none
+    background: none
+    height: 1px
+    display: block
+    margin: 15px 0
+    width: 100%
+    border-top: 1px solid $lightgray
 
 .db-friends
-	border-left: 1px solid $lightgray
-	overflow: hidden
+  border-left: 1px solid $lightgray
+  overflow: hidden
 
 
 ////
-//	Titles
+//  Titles
 ////
 [class*="db-title-"]
-	color: #7f8c8d
-	font-weight: normal
+  color: #7f8c8d
+  font-weight: normal
 
 .db-title-2
-	font-size: .88rem
+  font-size: .88rem
 
-	.db-friends &
-		text-transform: uppercase
-		padding: 20px 25px 15px
-		border-bottom: 1px solid $lightgray
+  .db-friends &
+    text-transform: uppercase
+    padding: 20px 25px 15px
+    border-bottom: 1px solid $lightgray
 
 .db-title-3
-	font-size: 1rem
+  font-size: 1rem
 
 .pull-right
   float: right !important;
