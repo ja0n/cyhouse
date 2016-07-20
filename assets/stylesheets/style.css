@@ -288,9 +288,11 @@ img {
 
 .table {
   background: #fff;
+  width: 100%;
   border: 1px solid #dee1e2; }
   .table th, .table td {
-    padding: 10px 15px; }
+    padding: 10px 15px;
+    text-align: center; }
   .table tr th, .table thead th, .table tbody th, .table tfoot th {
     font-weight: bold; }
   .table tr th:not(:last-child), .table tr td:not(:last-child), .table thead th:not(:last-child), .table thead td:not(:last-child), .table tbody th:not(:last-child), .table tbody td:not(:last-child), .table tfoot th:not(:last-child), .table tfoot td:not(:last-child) {
@@ -420,6 +422,8 @@ img {
     display: inline;
     list-style: none;
     margin-right: 40px; }
+    .db-menu-content li.active a {
+      border-bottom-color: #2ecc71; }
   .db-menu-content a {
     padding: 0 10px 5px;
     color: #2c3e50;

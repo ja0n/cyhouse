@@ -23,7 +23,8 @@ App.config(function($stateProvider, $urlRouterProvider) {
     })
     .state('settings.new-rule', {
       url: '/rules/new',
-      templateUrl: 'partials/rule.html'
+      templateUrl: 'partials/rule.html',
+      controller: 'NewRuleCtrl'
     });
 });
 
@@ -108,10 +109,13 @@ App.controller('DashboardCtrl', function DashboardCtrl() {
 
   var myBarChart = new Chart(ctx).Bar(data, options);
 
-
 });
 
 App.controller('SettingsCtrl', function SettingsCtrl() {
 
+});
 
+App.controller('NewRuleCtrl', function SettingsCtrl() {
+  const canvas = new Sticky('sticky');
+  
 });
