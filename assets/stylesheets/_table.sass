@@ -1,0 +1,21 @@
+
+.table
+  extend .dt-box
+  background: #fff
+  border: 1px solid $lightgray
+
+  th, td
+    padding: 10px 15px
+
+
+  tr, thead, tbody, tfoot
+    th
+      font-weight: bold
+
+    th, td
+      &:not(:last-child)
+        border-right: 1px solid $lightgray
+
+    &:not(:last-child)
+      th, td
+        border-bottom: 1px solid $lightgray
