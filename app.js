@@ -12,20 +12,21 @@ App.config(function($stateProvider, $urlRouterProvider) {
       templateUrl: 'partials/dashboard.html',
       controller: 'DashboardCtrl' 
     })
-    .state('settings', {
-      url: '/settings',
-      templateUrl: 'partials/settings.html',
-      controller: 'SettingsCtrl'
-    })
-    .state('settings.rules', {
+    .state('rules', {
       url: '/rules',
-      templateUrl: 'partials/rules.html'
+      templateUrl: 'partials/rules.html',
+      controller: 'RulesCtrl'
     })
-    .state('settings.new-rule', {
-      url: '/rules/new',
-      templateUrl: 'partials/rule.html',
-      controller: 'NewRuleCtrl'
-    });
+    .state('rules.list', {
+      url: '/list',
+      templateUrl: 'partials/rules.list.html'
+    })
+    .state('rules.create', {
+      url: '/create',
+      templateUrl: 'partials/rules.create.html',
+      controller: 'CreateRuleCtrl'
+    })
+    ;
 });
 
 
@@ -111,11 +112,11 @@ App.controller('DashboardCtrl', function DashboardCtrl() {
 
 });
 
-App.controller('SettingsCtrl', function SettingsCtrl() {
+App.controller('RulesCtrl', function SettingsCtrl() {
 
 });
 
-App.controller('NewRuleCtrl', function SettingsCtrl() {
+App.controller('CreateRuleCtrl', function SettingsCtrl() {
   const canvas = new Sticky('sticky');
   
 });

@@ -1,24 +1,20 @@
-<div class="pane">
-  <h1>Regras</h1>
+<div class="settings">
 
-  <table class="table">
-    <tr>
-      <th>Nome</th>
-      <th>Descrição</th>
-      <th>Data de Criação</th>
-      <th>Última Edição</th>
-      <th>Status</th>
-      <th>Complexidade</th>
-      <th>Ações</th>
-    </tr>
-    <tr>
-      <td>Teste</td>
-      <td>Controle de luz da entrada</td>
-      <td>10/08/2016</td>
-      <td>10/08/2016</td>
-      <td>Ativa</td>
-      <td>7</td>
-      <td>Deletar &bull; Editar &bull; Desativar</td>
-    </tr>
-  </table>
+	<div class="db-subheader">
+
+		<nav class="db-menu-content">
+			<ul>
+				<li ui-sref-active="active">
+          <a ui-sref=".list">Gerenciar Regras</a>
+        </li>
+				<li ui-sref-active="active">
+          <a ui-sref=".create">Criar Regra</a>
+        </li>
+			</ul>
+		</nav>
+
+	</div>
+
+  <div class="db-content" ui-view></div>
+
 </div>

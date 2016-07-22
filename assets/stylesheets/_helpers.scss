@@ -3,16 +3,20 @@
 ////
 $colors: (
 	green: #2ecc71,
+  bluewood: #2C3E50,
 	darkgreen: #16a085,
 	lightgray: #dee1e2,
+	oslogray: #7F8C8D,
 	orange: #e67333,
 	purple: #8e44ad,
 	red: #E73A27,
 );
 
 $green: map-get($colors, green);
+$bluewood: map-get($colors, bluewood);
 $darkgreen: map-get($colors, darkgreen);
 $lightgray: map-get($colors, lightgray);
+$oslogray: map-get($colors, oslogray);
 $orange: map-get($colors, orange);
 $purple: map-get($colors, purple);
 $red: map-get($colors, red);
