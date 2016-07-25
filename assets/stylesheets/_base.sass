@@ -7,6 +7,7 @@
 
 body
   background: #ecf0f1
+  color: $bluewood
   font: 100% helveticaneue, helvetica, arial, sans-serif
 
 img
@@ -119,9 +120,15 @@ img
     width: 100%
     border-top: 1px solid $lightgray
 
-.db-friends
+.db-list
   border-left: 1px solid $lightgray
   overflow: hidden
+  > ul > li > a
+    img
+      max-width: 30px
+      max-height: 30px
+      border-radius: 50%
+      border: 1px solid $lightgray
 
 
 ////
@@ -133,11 +140,14 @@ img
 
 .db-title-2
   font-size: .88rem
-
-  .db-friends &
-    text-transform: uppercase
-    padding: 20px 25px 15px
+  text-transform: uppercase
+  .db-list &
     border-bottom: 1px solid $lightgray
+    padding: 20px 25px 15px
+
+  .chart &
+    text-align: center
+    padding: 20px 0
 
 .db-title-3
   font-size: 1rem

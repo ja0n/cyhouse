@@ -1,16 +1,31 @@
 const App = angular.module('App', ['ui.router', 'ngAnimate']);
 
 App.config(function($stateProvider, $urlRouterProvider) {
-  //
   // For any unmatched url, redirect to /state1
   $urlRouterProvider.otherwise('/dashboard');
-  //
+  $urlRouterProvider.when('/modules', '/modules/list');
+  $urlRouterProvider.when('/rules', '/rules/list');
+
   // Now set up the states
   $stateProvider
     .state('dashboard', {
       url: '/dashboard',
       templateUrl: 'partials/dashboard.html',
-      controller: 'DashboardCtrl' 
+      controller: 'DashboardCtrl'
+    })
+    .state('modules', {
+      url: '/modules',
+      templateUrl: 'partials/modules.html',
+      controller: 'ModulesCtrl'
+    })
+    .state('modules.list', {
+      url: '/list',
+      templateUrl: 'partials/modules.list.html'
+    })
+    .state('modules.register', {
+      url: '/register',
+      templateUrl: 'partials/modules.register.html',
+      controller: 'RegisterModuleCtrl'
     })
     .state('rules', {
       url: '/rules',
@@ -33,82 +48,75 @@ App.config(function($stateProvider, $urlRouterProvider) {
 App.controller('DashboardCtrl', function DashboardCtrl() {
   var canvas1 = document.querySelector('#ram');
   var ctx = canvas1.getContext('2d');
-  var data = [
-    {
-        value: 64,
-        color:"#F7464A",
-        highlight: "#FF5A5E",
-        label: "Utilizado"
-    },
-    {
-        value: 36,
-        color: "#FDB45C",
-        highlight: "#FFC870",
-        label: "Livre"
-    }
-  ];
-  var options = {
-    //Boolean - Whether we should show a stroke on each segment
-    segmentShowStroke : true,
-    //String - The colour of each segment stroke
-    segmentStrokeColor : "#fff",
-    //Number - The width of each segment stroke
-    segmentStrokeWidth : 2,
-    //Number - The percentage of the chart that we cut out of the middle
-    percentageInnerCutout : 50, // This is 0 for Pie charts
-    //Number - Amount of animation steps
-    animationSteps : 30,
-    //String - Animation easing effect
-    animationEasing : "easeOut",
-    //Boolean - Whether we animate the rotation of the Doughnut
-    animateRotate : true,
-    //Boolean - Whether we animate scaling the Doughnut from the centre
-    animateScale : false,
-    //String - A legend template
-    legendTemplate : "<ul class=\"<%=name.toLowerCase()%>-legend\"><% for (var i=0; i<segments.length; i++){%><li><span style=\"background-color:<%=segments[i].fillColor%>\"></span><%if(segments[i].label){%><%=segments[i].label%><%}%></li><%}%></ul>"
-
-  };
-  var myDoughnutChart = new Chart(ctx).Doughnut(data,options);
-
-  var canvas2 = document.querySelector('#consumption');
-  var ctx = canvas2.getContext('2d');
   var data = {
-    labels: ["Janeiro", "Fevereiro", "Março", "Abril", "Maio", "Junho", "Julho"],
+    labels: [
+      "Ativo",
+      "Inativo",
+    ],
     datasets: [
       {
-        label: "Horas/Mês",
-        fillColor: "rgba(151,187,205,0.5)",
-        strokeColor: "rgba(151,187,205,0.8)",
-        highlightFill: "rgba(151,187,205,0.75)",
-        highlightStroke: "rgba(151,187,205,1)",
-        data: [28, 48, 40, 19, 86, 27, 90]
+        data: [1, 1],
+        backgroundColor: [
+          "#05AB2E",
+          "#FF6384",
+        ],
+        hoverBackgroundColor: [
+          "#05AB2E",
+          "#FF6384",
+        ]
       }
     ]
   };
 
-  var options = {
-    //Boolean - Whether the scale should start at zero, or an order of magnitude down from the lowest value
-    scaleBeginAtZero : true,
-    //Boolean - Whether grid lines are shown across the chart
-    scaleShowGridLines : true,
-    //String - Colour of the grid lines
-    scaleGridLineColor : "rgba(0,0,0,.05)",
-    //Number - Width of the grid lines
-    scaleGridLineWidth : 1,
-    //Boolean - If there is a stroke on each bar
-    barShowStroke : true,
-    //Number - Pixel width of the bar stroke
-    barStrokeWidth : 2,
-    //Number - Spacing between each of the X value sets
-    barValueSpacing : 5,
-    //Number - Spacing between data sets within X values
-    barDatasetSpacing : 1,
-    //String - A legend template
-    legendTemplate : "<ul class=\"<%=name.toLowerCase()%>-legend\"><% for (var i=0; i<datasets.length; i++){%><li><span style=\"background-color:<%=datasets[i].lineColor%>\"></span><%if(datasets[i].label){%><%=datasets[i].label%><%}%></li><%}%></ul>"
+  var myDoughnutChart = new Chart(ctx, {
+    type: 'doughnut',
+    data: data,
+  });
 
-  }
+  var canvas2 = document.querySelector('#consumption');
+  var ctx = canvas2.getContext('2d');
+
+  var data = {
+    labels: ["Janeiro", "Fevereiro", "Março", "Abril", "Maio", "Junho", "Julho"],
+    datasets: [
+      {
+        label: "Maior consumo",
+        backgroundColor: [
+          'rgba(255, 99, 132, 0.2)',
+          'rgba(54, 162, 235, 0.2)',
+          'rgba(255, 206, 86, 0.2)',
+          'rgba(75, 192, 192, 0.2)',
+          'rgba(153, 102, 255, 0.2)',
+          'rgba(255, 159, 64, 0.2)'
+        ],
+        borderColor: [
+          'rgba(255,99,132,1)',
+          'rgba(54, 162, 235, 1)',
+          'rgba(255, 206, 86, 1)',
+          'rgba(75, 192, 192, 1)',
+          'rgba(153, 102, 255, 1)',
+          'rgba(255, 159, 64, 1)'
+        ],
+        borderWidth: 1,
+        data: [81, 59, 65, 70, 56, 55, 40],
+      }
+    ]
+  };
+
+  var myBarChart = new Chart(ctx, {
+    type: 'bar',
+    data: data,
+  });
 
   var myBarChart = new Chart(ctx).Bar(data, options);
+
+});
+
+App.controller('ModulesCtrl', function SettingsCtrl() {
+
+});
+
+App.controller('RegisterModuleCtrl', function SettingsCtrl() {
 
 });
 
@@ -118,5 +126,41 @@ App.controller('RulesCtrl', function SettingsCtrl() {
 
 App.controller('CreateRuleCtrl', function SettingsCtrl() {
   const canvas = new Sticky('sticky');
-  
+
+  canvas.registerBlock('AnalogRead', {
+    fill: '#4fec2f',
+    ports: { data_in: 0, data_out: 1, flow_in: 0, flow_out: 0 },
+    title: 'Analogic Read',
+    gui: {
+      port: { label: 'Port', type: 'select', options: ['A_01', 'A_02', 'A_03', 'A_04', 'A_05'] }
+    },
+    behavior: function() {
+      return [this.inputs.port];
+    }
+  });
+
+  canvas.registerBlock('DigitalWrite', {
+    fill: '#EC962F',
+    ports: { data_in: 1, data_out: 0, flow_in: 1, flow_out: 1 },
+    title: 'Digital Write',
+    gui: {
+      port: { label: 'Port', type: 'select', options: ['D_01', 'D_02', 'D_03', 'D_04', 'D_05'] }
+    },
+    behavior: function(findById) {
+      return 0;
+    }
+  });
+
+  var rect1 = canvas.createBlock('Source');
+  var rect2 = canvas.createBlock('AnalogRead');
+  var rect3 = canvas.createBlock('DigitalWrite');
+  var rect4 = canvas.createBlock('Comparison');
+  rect1.x = 130; rect1.y = 230;
+  rect2.x = 330; rect2.y = 200;
+  rect3.x = 330; rect3.y = 100;
+  rect4.x = 130; rect4.y = 300;
+  canvas.addObj(rect1);
+  canvas.addObj(rect2);
+  canvas.addObj(rect3);
+  canvas.addObj(rect4);
 });

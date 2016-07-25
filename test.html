@@ -7,10 +7,32 @@
 	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.css">
   <script src="http://ja0n.github.io/sticky/sticky.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/1.0.2/Chart.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.1.6/Chart.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.0/angular.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.0/angular-animate.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.3.1/angular-ui-router.js"></script>
   <script src="app.js"></script>
+	<style>
+	.sticky-block {
+	  stroke: black;
+	  cursor: move;
+	}
+	.sticky-block:hover {
+	  stroke: red;
+	}
+	.sticky-gui {
+	  width: 200px;
+	}
+	.sticky-gui body {
+	  margin: 0;
+		background: transparent;
+		color: black;
+	}
+	.sticky-gui input, select {
+	  width: 60%;
+	  display: inline-block;
+	}
+	</style>
 </head>
 <body ng-app="App">
 
@@ -25,21 +47,21 @@
         <li ui-sref-active="active">
           <a ui-sref="dashboard" class="db-ico-dashboard">Dashboard</a>
         </li>
+				<li ui-sref-active="active">
+					<a ui-sref="modules" class="db-ico-news">Módulos</a>
+				</li>
         <li ui-sref-active="active">
-          <a ui-sref="rules" class="db-ico-exam">Regras</a>
+          <a ui-sref="rules" class="db-ico-course">Regras</a>
         </li>
-        <li ui-sref-active="active">
-          <a ui-sref="modules" class="db-ico-exam">Módulos</a>
-        </li>
-        <!-- <li><a href="#" class="db-ico-course">course</a></li> -->
-        <!-- <li><a href="#" class="db-ico-qa">q&a</a></li> -->
-        <!-- <li><a href="#" class="db-ico-news">news</a></li> -->
+        <!-- <li><a href="#" class="db-ico-course/exam">course</a></li>
+        <li><a href="#" class="db-ico-qa">q&a</a></li>
+        <li><a href="#" class="db-ico-news">news</a></li> -->
       </ul>
     </nav>
   </aside>
 
   <section class="db-container">
-    
+
     <header class="db-header">
       <ul class="db-notifications pull-right">
         <li><a href="#" class="db-ico-alerts">Alerts</a></li>
